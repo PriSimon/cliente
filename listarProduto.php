@@ -13,10 +13,10 @@
 
 <?php
 
-require_once 'model/Cliente.php';
+require_once 'model/Produto.php';
 
 $consulta=listaProduto();
-if(!$consula){
+if(!$consulta){
     echo "<h2> Nenhum produto cadastrado.</h2>";
 }else{
     echo "<table>";
@@ -25,15 +25,15 @@ if(!$consula){
             echo "<th> Nome </th>";
             echo "<th> Descrição </th>";
             echo "<th> Valor (R$) </th>";
-        echo "<tr>"
+        echo "</tr>";
 
-while($linha=$consulta->fetch_assoc()){
-         echo "<tr>"
+while ($linha=$consulta->fetch_assoc()){
+         echo "<tr>";
             echo "<td>".$linha['id']."</td>";
             echo "<td>".$linha['nome']."</td>";
             echo "<td>".$linha['descricao']."</td>";
             echo "<td>".$linha['valor']."</td>";
-         echo "</tr>"
+         echo "</tr>";
     }
     echo "</table>";
 }

@@ -16,7 +16,7 @@
 require_once 'model/Cliente.php';
 
 $consulta=listaCliente();
-  if(!$consula){
+  if(!$consulta){
     echo "<h2> Nenhum cliente cadastrado.</h2>";
 }else{
 
@@ -31,10 +31,10 @@ $consulta=listaCliente();
             echo "<th> Cidade </th>";
             echo "<th> E-mail </th>";
             echo "<th> Telefone </th>";
-        echo "<tr>"
+        echo "</tr>";
 
-while($linha=$consulta->fetch_assoc()){
-         echo "<tr>"
+while ($linha=$consulta->fetch_assoc()){
+         echo "<tr>";
              echo "<td>".$linha['nome']."</td>";
              echo "<td>".$linha['cpf']."</td>";
              echo "<td>".$linha['rg']."</td>";
@@ -44,7 +44,7 @@ while($linha=$consulta->fetch_assoc()){
              echo "<td>".$linha['cidade']."</td>";
              echo "<td>".$linha['email']."</td>";
              echo "<td>".$linha['telefone']."</td>";
-        echo "</tr>"
+        echo "</tr>";
             }
     echo "</table>";
         } 
