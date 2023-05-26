@@ -29,9 +29,15 @@
         } return $codigo;
  }
 
- function listaProduto(){
+ function listaProduto($ordem){
     $banco=new banco();
-    $sql="select * from produto order by nome";
+    if ($ordem==""||$ordem=="id") {
+        $sql="select * from produto order by id";
+    }else if ($ordem=="nome") {
+        $sql="select * from produto order by nome"; 
+    }else if ($ordem=="valor") {
+        $sql="select * from produto order by valor";
+    }
     $consulta=$banco->consultar($sql);
        if (!$consulta) {
         return false;

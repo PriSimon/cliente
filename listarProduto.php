@@ -15,16 +15,28 @@
 
 require_once 'model/Produto.php';
 
-$consulta=listaProduto();
+if (isset($_GET['ordem'])) { 
+	$ordem=$_GET['ordem'];
+}else{
+	$ordem="";
+}
+
+$consulta=listaProduto($ordem);
 if(!$consulta){
     echo "<h2> Nenhum produto cadastrado.</h2>";
 }else{
     echo "<table>";
         echo "<tr>";
-            echo "<th> ID </th>";
-            echo "<th> Nome </th>";
+            echo "<th> ID <form action='listarProduto.php' method='GET'>
+            <input type='hidden' name='ordem' value='id'>
+                <input type='submit' value='&#8659;'></form></th>";
+            echo "<th> Nome <form action='listarProduto.php' method='GET'>
+            <input type='hidden' name='ordem' value='nome'>
+                <input type='submit' value='&#8659;'></form></th>";
             echo "<th> Descrição </th>";
-            echo "<th> Valor (R$) </th>";
+            echo "<th> Valor (R$) <form action='listarProduto.php' method='GET'>
+            <input type='hidden' name='ordem' value='valor'>
+                <input type='submit' value='&#8659;'></form></th>";
         echo "</tr>";
 
 while ($linha=$consulta->fetch_assoc()){
