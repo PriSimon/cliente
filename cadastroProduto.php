@@ -33,7 +33,7 @@ require_once 'model/Produto.php';
         echo "<h2> Erro na tentativa de cadastro do produto.</h2>";
     } else {
         $codigo++;
-        $resposta=cadastroProduto($id, $nome, $descricao, $valor);
+        $resposta=cadastroProduto($codigo, $nome, $descricao, $valor);
         if (!$resposta) {
             echo "<h2> Erro na tentativa de cadastro.</h2>";
         } else {
