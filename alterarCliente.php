@@ -3,8 +3,8 @@
 <head>
         <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <link rel="stylesheet" type="text/css" href="css/cadastro.css">
-	    <title>Alterar</title>
+	    <link rel="stylesheet" type="text/css" href="css/alterar.css">
+	    <title>Alterar Cliente</title>
         <meta name="author" content="Priscila Simon">
 	    <meta name="keywords" content="cadastro, cliente, produto, banco de dados">
 	    <meta name="description" content="Sistema para cadastro de clientes e produtos">
@@ -95,7 +95,10 @@
                                             <button type="button" class="btn btn-default" onclick="javascript:window.print();">Imprimir</button>
                                         </div>
                                     </div>
+                           
                                     
 
+</body>
+</html>
                             
                                 
