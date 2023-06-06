@@ -11,6 +11,11 @@
     </head>
 <body>
 
+<?php 
+require_once 'menu.php';
+?>
+
+
 <form id="cadastro" action="cadastroProduto.php" method="POST">
     <h1> Cadastro de Produtos </h1>
         <p>Nome: <input type="text" name="nome" size="100" maxlegth="100" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}" title="Nome do produto" required></p>

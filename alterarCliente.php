@@ -10,6 +10,12 @@
 	    <meta name="description" content="Sistema para cadastro de clientes e produtos">
     </head>
 <body>
+
+<?php 
+require_once 'menu.php';
+?>
+
+
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
