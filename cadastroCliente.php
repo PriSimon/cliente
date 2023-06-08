@@ -11,9 +11,28 @@
     </head>
 <body>
 
-<?php 
-require_once 'menu.php';
-?>
+<?php require_once 'menu.php';?>
+
+<div>
+    <form>
+
+    <p>N&ordm; de Clientes Cadastrados</p>
+
+<?php require_once 'model/Cliente.php';
+$consulta=contarCliente();
+	if(!$consulta){
+    echo "<p>Erro no cadastro</p>";
+    } else {
+        $res = $consulta->fetch_assoc();
+        echo $res['COUNT(cpf)'];
+        }
+    ?>
+
+    </form>
+</div>    
+
+
+
 
 <div class="container pb-5">
     <form id="cadastro" action="cadastroCliente.php" method="POST">

@@ -8,12 +8,29 @@
         <meta name="author" content="Priscila Simon">
 	    <meta name="keywords" content="cadastro, cliente, produto, banco de dados">
 	    <meta name="description" content="Sistema para cadastro de clientes e produtos">
+       
     </head>
 <body>
 
-<?php 
-require_once 'menu.php';
-?>
+<?php require_once 'menu.php'; ?>
+
+<div>
+<form>
+
+
+
+<?php require_once 'model/Cliente.php';
+$consulta=contarCliente();
+	if(!$consulta){
+    echo "<p>Erro no cadastro</p>";
+    } else {
+        $res = $consulta->fetch_assoc();
+        }
+    ?>
+   
+
+</form>
+</div>    
 
 
 <?php
@@ -25,37 +42,45 @@ $consulta=listaCliente();
     echo "<h2> Nenhum cliente cadastrado.</h2>";
 }else{
 
-    echo "<table>";
-        echo "<tr>";
-            echo "<th> Nome </th>";
-            echo "<th> CPF </th>";
-            echo "<th> RG </th>";
-            echo "<th> Nascimento </th>";
-            echo "<th> CEP </th>";
-            echo "<th> Encereço </th>";
-            echo "<th> Cidade </th>";
-            echo "<th> E-mail </th>";
-            echo "<th> Telefone </th>";
-        echo "</tr>";
+    ?>
 
-while ($linha=$consulta->fetch_assoc()){
-         echo "<tr>";
-             echo "<td>".$linha['nome']."</td>";
-             echo "<td>".$linha['cpf']."</td>";
-             echo "<td>".$linha['rg']."</td>";
-             echo "<td>".$linha['nascimento']."</td>";
-             echo "<td>".$linha['cep']."</td>";
-             echo "<td>".$linha['endereco']."</td>";
-             echo "<td>".$linha['cidade']."</td>";
-             echo "<td>".$linha['email']."</td>";
-             echo "<td>".$linha['telefone']."</td>";
-        echo "</tr>";
-            }
-    echo "</table>";
-        } 
-
-?>
-
+    <div class="container mt-5">
+        <table class="table table-striped">
+        <p>N&ordm; de Clientes Cadastrados: <?php  echo $res['COUNT(cpf)']; ?></p>
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">RG</th>
+                    <th scope="col">Nascimento</th>
+                    <th scope="col">CEP</th>
+                    <th scope="col">Encereço</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Telefone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php while ($linha=$consulta->fetch_assoc()){ ?>
+                <tr>
+                    <td><?= $linha['nome'] ?></td>
+                    <td><?= $linha['cpf'] ?></td>
+                    <td><?= $linha['rg'] ?></td>
+                    <td><?= $linha['nascimento'] ?></td>
+                    <td><?= $linha['cep'] ?></td>
+                    <td><?= $linha['endereco'] ?></td>
+                    <td><?= $linha['cidade'] ?></td>
+                    <td><?= $linha['email'] ?></td>
+                    <td><?= $linha['telefone'] ?></td>
+                </tr>
+                <?php  } ?>
+    
+            </tbody>
+        </table>
+    </div>
+    
+    <?php  }
+    ?>
 
 
 

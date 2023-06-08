@@ -47,5 +47,18 @@ function alteraCliente($nome, $cpf, $nascimento, $cep, $endereco, $cidade, $emai
         
 }
 
+
+
+function contarCliente(){
+   $banco=new banco();
+   $sql="SELECT COUNT(cpf) from cliente";
+   $consulta=$banco->consultar($sql);
+   if (!$consulta) {
+       return false;
+   } else {
+       return $consulta;
+   }
+}
  
  ?>
+ 
