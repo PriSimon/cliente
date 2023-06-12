@@ -24,6 +24,10 @@ require_once 'menu.php';
 <div class="form-floating">
   <input type="password" class="form-control" id="senha">
   <label for="floatingPassword">Senha: </label>
+
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Logar</button>
+  </div>
 </div>
 
 
