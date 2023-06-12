@@ -64,7 +64,7 @@ if (isset($_POST['nome'])) {
 				if (!$resposta) {
 					echo "<p>Erro na tentativa de cadastro!</p>";
 				}else{
-					echo "<p>Usuário cadastrado com sucesso! &#10024;</p>";
+					echo "<p>Usuário cadastrado com sucesso!</p>";
 
 		}
 	}
