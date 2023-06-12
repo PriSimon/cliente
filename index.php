@@ -17,19 +17,20 @@
 require_once 'menu.php';
 ?>
 
+<form method="POST">
 <div class="form-floating mb-3">
-  <input type="text" class="form-control" id="login">
+  <input type="text" class="form-control" name="login">
   <label for="floatingInput">Usuário: </label>
 </div>
 <div class="form-floating">
-  <input type="password" class="form-control" id="senha">
+  <input type="password" class="form-control" name="senha">
   <label for="floatingPassword">Senha: </label>
-
+<br>
   <div class="col-12">
     <button class="btn btn-primary" type="submit">Logar</button>
   </div>
 </div>
-
+</form>
 
 
 
@@ -42,7 +43,7 @@ require_once 'menu.php';
 		$resposta=login($login,$senha);
 		if ($resposta) {
 			echo "<p>Login realizado com sucesso!</p>";
-			$teste=criarLogin($teste,$usuario);
+			//$teste=criarLogin($teste,$usuario);
 			echo "<meta http-equiv='refresh'content='2; url=//localhost/cliente/home.php'>"; //direcionar apenas quando fizer o login
 		}else{
 			echo "<p>Erro na tentativa de Login.</p>";

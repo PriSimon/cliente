@@ -17,33 +17,26 @@
 <form method="POST" class="row g-3 needs-validation" novalidate>
   <div class="col-md-4">
     <label for="validationCustom01" class="form-label">Nome: </label>
-    <input type="text" class="form-control" id="nome" placeholder="José Josias Jaqueu" required>
+    <input type="text" class="form-control" name="nome" placeholder="José Josias Jaqueu" required>
   </div>
   <div class="col-md-4">
     <label for="validationCustomUsername" class="form-label">Usuário: </label>
     <div class="input-group has-validation">
-      <input type="text" class="form-control" id="login" aria-describedby="inputGroupPrepend" required>
+      <input type="text" class="form-control" name="login" aria-describedby="inputGroupPrepend" required>
     </div>
   </div>
   <div class="col-md-6">
     <label for="validationCustom03" class="form-label">Senha: </label>
-    <input type="password" class="form-control" id="senha" required>
+    <input type="password" class="form-control" name="senha" required>
   </div>
   <div class="col-md-3">
     <label for="validationCustom04" class="form-label">E-mail: </label>
-    <input type="email" class="form-control" id="email" placeholder="teste@examplo.com" required>
+    <input type="email" class="form-control" name="email" placeholder="teste@examplo.com" required>
   </div>
   <div class="col-12">
     <button class="btn btn-primary" type="submit">Cadastrar</button>
   </div>
 </form>
-
-<?php
-  if(isset($_POST["senha"])){ //senha é codificada ao entrar no BD
-  $string = $_POST["senha"];
-  echo md5($string);
-}
-?>
 
 
 <?php
@@ -60,7 +53,7 @@ if (isset($_POST['nome'])) {
 			echo "<p>Erro ao cadastrar.</p>";
 		}else{
 			$id++;
-			$resposta=cadastroUsuario($id,$nome,$login,$senha,$email);
+			$resposta=cadastroUsuario($id,$nome,$login,md5($senha),$email);
 				if (!$resposta) {
 					echo "<p>Erro na tentativa de cadastro!</p>";
 				}else{

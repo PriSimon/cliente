@@ -4,6 +4,7 @@ require_once './persistence/Banco.php';
 function cadastroUsuario($id,$nome,$login,$senha,$email){
 $banco=new banco();
 $sql="insert into usuario values($id,'$nome','$login','$senha','$email')";
+//return $sql;
 $resp=$banco->executar($sql);
 if($resp){
     return true;
@@ -30,8 +31,9 @@ function idUsuario(){ //função para gerar o ID automárico
 
  function login($login,$senha){ //login em si
 	$banco= new Banco();
-	$sql="select login,senha from usuario";
+	$sql="select login,senha from usuario WHERE login  like  '$login'";
 	$consulta=$banco->consultar($sql);
+
 	if(!$consulta){
 		return false;
 	}else{
