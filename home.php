@@ -14,7 +14,11 @@
     </head>
 <body>
 
+<?php 
+require_once 'menu.php';
+?>
 
+<div class="container mt-5">
 <h1>Bem vindo ao sistema de cadastro de clientes e produtos.</h1>
 
 <div class="alert alert-dark" role="alert">
@@ -23,6 +27,11 @@ echo "<h2>Home - Início</h2>";
 echo "<p>Hoje é ".date("d/m/Y")."</p>";
 ?>
 </div>
+</div>
 
+
+
+</body>
+</html>
 
 

@@ -12,7 +12,11 @@
     </head>
 <body>
 
+
+
+<div class="container mt-5">
 <h1> Cadastro de novo Usuário</h1>
+
 
 <form method="POST" class="row g-3 needs-validation" novalidate>
   <div class="col-md-4">
@@ -37,7 +41,7 @@
     <button class="btn btn-primary" type="submit">Cadastrar</button>
   </div>
 </form>
-
+</div>
 
 <?php
 

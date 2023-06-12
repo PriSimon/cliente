@@ -17,6 +17,7 @@
 require_once 'menu.php';
 ?>
 
+<div class="container mt-5">
 <form method="POST">
 <div class="form-floating mb-3">
   <input type="text" class="form-control" name="login">
@@ -31,7 +32,7 @@ require_once 'menu.php';
   </div>
 </div>
 </form>
-
+</div>
 
 
 <?php

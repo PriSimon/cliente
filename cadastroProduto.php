@@ -15,7 +15,7 @@
 require_once 'menu.php';
 ?>
 
-
+<div class="container mt-5">
 <form id="cadastro" action="cadastroProduto.php" method="POST">
     <h1> Cadastro de Produtos </h1>
         <p>Nome: <input type="text" name="nome" size="100" maxlegth="100" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}" title="Nome do produto" required></p>
@@ -23,7 +23,7 @@ require_once 'menu.php';
         <p>Valor R$:   <input type="text" name="valor" size="10" maxlegth="10" pattern="[0-9]{1,8}\[0-9]{2}" title="99.99" required></p> 
         <input type="submit" name="cadastrar" value="Cadastrar">
 </form>
-
+</div>
 
 <?php
 

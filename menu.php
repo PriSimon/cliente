@@ -11,17 +11,24 @@
     }
 </style>
 </head>
+
 <ul class="nav justify-content-center bg-dark p-2" >
+  <li class="nav-item">
+    <a class="nav-link" href="home.php">Página Inicial</a>
+  </li>
   <li class="nav-item">
     <a class="nav-link active" href="listarCliente.php">Clientes</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="listarProduto.php">Produto</a>
+    <a class="nav-link" href="listarProduto.php">Produtos</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="cadastroCliente.php">Novo cliente</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="cadastroProduto.php">Novo produto</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="logoff.php">Sair</a>
   </li>
 </ul>
