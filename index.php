@@ -8,6 +8,8 @@
         <meta name="author" content="Priscila Simon">
 	    <meta name="keywords" content="cadastro, cliente, produto, banco de dados">
 	    <meta name="description" content="Sistema para cadastro de clientes e produtos">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+		
     </head>
 <body>
 
@@ -15,12 +17,37 @@
 require_once 'menu.php';
 ?>
 
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="login">
+  <label for="floatingInput">Usuário: </label>
+</div>
+<div class="form-floating">
+  <input type="password" class="form-control" id="senha">
+  <label for="floatingPassword">Senha: </label>
+</div>
 
 
 
 
+<?php
+	if(isset($_POST['login'])){
+		$login=$_POST['login'];
+		$senha=$_POST['senha'];
+		require_once 'model/Usuario.php';
+
+		$resposta=login($login,$senha);
+		if ($resposta) {
+			echo "<p>Login realizado com sucesso!</p>";
+			$teste=criarLogin($teste,$usuario);
+			echo "<meta http-equiv='refresh'content='2; url=//localhost/cliente/home.php'>"; //direcionar apenas quando fizer o login
+		}else{
+			echo "<p>Erro na tentativa de Login.</p>";
+		}
+		}
 
 
+
+?>
 
 
 

@@ -28,4 +28,45 @@ function idUsuario(){ //função para gerar o ID automárico
         } return $codigo;
  }
 
- 
+ function login($login,$senha){ //login em si
+	$banco= new Banco();
+	$sql="select login,senha from usuario";
+	$consulta=$banco->consultar($sql);
+	if(!$consulta){
+		return false;
+	}else{
+		while ($linha=$consulta->fetch_assoc()) {
+			if ($linha['login']==$login){
+				if ($linha['senha']==$senha){
+					return true;
+				}else{
+					return false;
+				}
+			}else{
+				return false;
+			}
+		}
+	}
+}
+
+ function criarLogin($teste,$usuario){ //função para salvar o login (cookie)
+	if ($teste) {
+		setcookie('usuario',$usuario); 
+    }else{
+		return false;
+	}
+}
+
+function estaLogado(){ 
+	if(isset($_COOKIE['usuario'])) {
+		return true;
+	}else{
+		return false;
+	}
+
+}
+
+
+
+
+?>
