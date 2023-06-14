@@ -54,10 +54,11 @@ $consulta=listaCliente();
                     <th scope="col">RG</th>
                     <th scope="col">Nascimento</th>
                     <th scope="col">CEP</th>
-                    <th scope="col">Encereço</th>
+                    <th scope="col">Endereço</th>
                     <th scope="col">Cidade</th>
                     <th scope="col">E-mail</th>
                     <th scope="col">Telefone</th>
+                    <th scope="col">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -72,6 +73,7 @@ $consulta=listaCliente();
                     <td><?= $linha['cidade'] ?></td>
                     <td><?= $linha['email'] ?></td>
                     <td><?= $linha['telefone'] ?></td>
+                    <td><form action="alterarCliente.php" Method="POST"><a value="<?php $linha['cpf']?>" href="alterarCliente.php">&#128221;</a> </td> <!--remover não foi feito <form action="removerCliente.php" Method="POST"><a value="php '.$linha['cpf'].'?>">&#128465;</a>-->
                 </tr>
                 <?php  } ?>
     

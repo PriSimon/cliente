@@ -22,7 +22,7 @@ require_once 'menu.php';
 <h1>Bem vindo ao sistema de cadastro de clientes e produtos.</h1>
 <p>Use o menu acima para navegar.</p>
 
-<div class="alert alert-dark" role="alert">
+<div class="alert alert-dark mt-5" role="alert">
 <?php 
 
 echo "<h2>Hoje é dia</h2>";

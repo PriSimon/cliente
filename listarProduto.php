@@ -39,6 +39,7 @@ if(!$consulta){
                     <th scope="col"> Nome </th>
                     <th scope="col"> Descrição </th>
                     <th scope="col"> Valor (R$) </th>
+                    <th scop="col"> Ações </th>
                 </tr>
          </thead>
         <tbody>
@@ -48,16 +49,24 @@ if(!$consulta){
                     <td><?= $linha['nome'] ?></td>
                     <td><?= $linha['descricao'] ?></td>
                     <td><?= $linha['valor'] ?></td>
+                    <td><a href="alterarProduto.php"> &#128221; &#128465; </td>
+                    
                 </tr>
     <?php } ?>
 
     </tbody>
         </table>
-             </div>   
+               
 <?php }
 ?>
 
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <button type="button" class="btn btn-dark" onclick="javascript:window.print();">Imprimir</button>
+    </div>
+</div>
 
+</div> 
 
 
 </body>
