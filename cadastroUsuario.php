@@ -41,7 +41,7 @@
     <button class="btn btn-primary" type="submit">Cadastrar</button>
   </div>
 </form>
-</div>
+
 
 <?php
 
@@ -62,6 +62,7 @@ if (isset($_POST['nome'])) {
 					echo "<p>Erro na tentativa de cadastro!</p>";
 				}else{
 					echo "<p>Usuário cadastrado com sucesso!</p>";
+          echo "<meta http-equiv='refresh'content='2; url=//localhost/cliente/index.php'>";
 
 		}
 	}
@@ -71,7 +72,7 @@ if (isset($_POST['nome'])) {
 
 
 ?>
-
+</div>
 
 </body>
 </html>

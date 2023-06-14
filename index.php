@@ -26,12 +26,14 @@ require_once 'menu.php';
 <div class="form-floating">
   <input type="password" class="form-control" name="senha">
   <label for="floatingPassword">Senha: </label>
-<br>
-  <div class="col-12">
+  <div class="col-12 mt-5">
     <button class="btn btn-primary" type="submit">Logar</button>
   </div>
+ 
 </div>
 </form>
+<div class="col-12 mt-3">
+<label for="floatingInput"> Ainda não tem cadastro? <a href="cadastroUsuario.php"><button class="btn btn-primary" type="submit">Cadastrar</button></a>
 </div>
 
 
@@ -54,7 +56,7 @@ require_once 'menu.php';
 
 
 ?>
-
+</div>
 
 
 

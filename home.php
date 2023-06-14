@@ -18,14 +18,17 @@
 require_once 'menu.php';
 ?>
 
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
 <h1>Bem vindo ao sistema de cadastro de clientes e produtos.</h1>
+<p>Use o menu acima para navegar.</p>
 
 <div class="alert alert-dark" role="alert">
 <?php 
-echo "<h2>Home - Início</h2>";
-echo "<p>Hoje é ".date("d/m/Y")."</p>";
+
+echo "<h2>Hoje é dia</h2>";
+echo "<p>".date("d/m/Y")."</p>";
 ?>
+
 </div>
 </div>
 
