@@ -64,16 +64,18 @@ $consulta=listaCliente();
             <tbody>
                 <?php while ($linha=$consulta->fetch_assoc()){ ?>
                 <tr>
-                    <td><?= $linha['nome'] ?></td>
-                    <td><?= $linha['cpf'] ?></td>
-                    <td><?= $linha['rg'] ?></td>
-                    <td><?= $linha['nascimento'] ?></td>
-                    <td><?= $linha['cep'] ?></td>
-                    <td><?= $linha['endereco'] ?></td>
-                    <td><?= $linha['cidade'] ?></td>
-                    <td><?= $linha['email'] ?></td>
-                    <td><?= $linha['telefone'] ?></td>
-                    <td><form action="alterarCliente.php" Method="POST"><a value="<?php $linha['cpf']?>" href="alterarCliente.php">&#128221;</a> </td> <!--remover não foi feito <form action="removerCliente.php" Method="POST"><a value="php '.$linha['cpf'].'?>">&#128465;</a>-->
+                    <td><?php echo $linha['nome']; ?></td>
+                    <td><?php echo $linha['cpf']; ?></td>
+                    <td><?php echo $linha['rg']; ?></td>
+                    <td><?php echo $linha['nascimento']; ?></td>
+                    <td><?php echo $linha['cep']; ?></td>
+                    <td><?php echo $linha['endereco']; ?></td>
+                    <td><?php echo $linha['cidade']; ?></td>
+                    <td><?php echo $linha['email']; ?></td>
+                    <td><?php echo $linha['telefone']; ?></td>
+                    <td><form action="alterarCliente.php" Method="POST">
+                        <input type="hidden" name="cpf" value="<?php echo $linha['cpf'];?>">
+                        <input type="submit" value="&#128221;"></form></td> <!--remover não foi feito <form action="removerCliente.php" Method="POST"><a value="php '.$linha['cpf'].'?>">&#128465;</a>-->
                 </tr>
                 <?php  } ?>
     

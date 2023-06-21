@@ -35,9 +35,9 @@
       }  
  }
 
-function alteraCliente($nome, $cpf, $nascimento, $cep, $endereco, $cidade, $email, $telefone){
+function alteraCliente($nome, $cpf, $rg, $nascimento, $cep, $endereco, $cidade, $email, $telefone){
     $banco=new banco();
-    $sql="update cliente set nome='$nome', cep=$cep, endereco='$endereco', cidade='$cidade', email='$email', nascimento='$nascimento' telefone=$telefone where cpf=$cpf";
+    $sql="update cliente set nome='$nome', rg=$rg, nascimento='$nascimento', cep=$cep, endereco='$endereco', cidade='$cidade', email='$email', telefone=$telefone where cpf=$cpf";
     $resposta=$banco->executar($sql);
         if (!$resposta) {
             return false;
