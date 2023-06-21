@@ -13,10 +13,8 @@
 
 <?php require_once 'menu.php';?>
 
-<div>
-    <form>
-
-    <p>N&ordm; de Clientes Cadastrados</p>
+<div >
+<form>
 
 <?php require_once 'model/Cliente.php';
 $consulta=contarCliente();
@@ -28,13 +26,14 @@ $consulta=contarCliente();
         }
     ?>
 
-    </form>
+</form>
 </div>    
 
 
 
 
 <div class="container pb-5">
+     <p>N&ordm; de Clientes Cadastrados: <?php  echo $res['COUNT(cpf)']; ?></p>
     <form id="cadastro" action="cadastroCliente.php" method="POST">
         <h1 class="mt-5 mb-5"> Cadastro de Clientes </h1>
             <p>Nome: <input class="form-control" type="text" name="nome" size="100" maxlegth="100" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}" title="Nome completo" required></p>

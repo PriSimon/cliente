@@ -17,8 +17,6 @@
 <div>
 <form>
 
-
-
 <?php require_once 'model/Cliente.php';
 $consulta=contarCliente();
 	if(!$consulta){
