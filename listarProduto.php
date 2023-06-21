@@ -33,24 +33,34 @@ if(!$consulta){
 
 <div class="container mt-5">
         <table class="table table-striped">
+            <p>Produtos Cadastrados</p>
             <thead>
                 <tr>
-                    <th scope="col"> ID </th>
-                    <th scope="col"> Nome </th>
-                    <th scope="col"> Descrição </th>
-                    <th scope="col"> Valor (R$) </th>
+                    <th scope="col"> ID <form action="listarProduto.php" method="GET">
+				        <input type="hidden" name="ordem" value="id">
+					    <input type="submit" value="&#8659;"></form></th>
+                    <th scope="col"> Nome <form action="listarProduto.php" method="GET">
+				        <input type="hidden" name="ordem" value="nome">
+					    <input type="submit" value="&#8659;"></form></th>
+                    <th scope="col"> Descrição <form action="listarProduto.php" method="GET">
+				        <input type="hidden" name="ordem" value="descricao">
+					    <input type="submit" value="&#8659;"></form></th>
+                    <th scope="col"> Valor (R$) <form action="listarProduto.php" method="GET">
+				        <input type="hidden" name="ordem" value="valor">
+					    <input type="submit" value="&#8659;"></form></th>
                     <th scop="col"> Ações </th>
                 </tr>
          </thead>
         <tbody>
             <?php while ($linha=$consulta->fetch_assoc()){ ?>
                 <tr>
-                    <td><?= $linha['id'] ?></td>
-                    <td><?= $linha['nome'] ?></td>
-                    <td><?= $linha['descricao'] ?></td>
-                    <td><?= $linha['valor'] ?></td>
-                    <td><a href="alterarProduto.php"> &#128221; &#128465; </td>
-                    
+                    <td><?php echo $linha['id']; ?></td>
+                    <td><?php echo $linha['nome']; ?></td>
+                    <td><?php echo $linha['descricao']; ?></td>
+                    <td><?php echo $linha['valor']; ?></td>
+                    <td><form action="alterarProduto.php" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $linha['id'];?>">
+                        <input type="submit" value="&#128221;"></form></td> 
                 </tr>
     <?php } ?>
 

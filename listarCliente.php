@@ -73,7 +73,7 @@ $consulta=listaCliente();
                     <td><?php echo $linha['cidade']; ?></td>
                     <td><?php echo $linha['email']; ?></td>
                     <td><?php echo $linha['telefone']; ?></td>
-                    <td><form action="alterarCliente.php" Method="POST">
+                    <td><form action="alterarCliente.php" method="POST">
                         <input type="hidden" name="cpf" value="<?php echo $linha['cpf'];?>">
                         <input type="submit" value="&#128221;"></form></td> <!--remover não foi feito <form action="removerCliente.php" Method="POST"><a value="php '.$linha['cpf'].'?>">&#128465;</a>-->
                 </tr>

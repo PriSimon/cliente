@@ -57,6 +57,17 @@
       }  
  }
 
+ function selecionaProduto($id){
+    $banco=new Banco();
+    $sql="select * from produto where id='$id'";
+    $consulta=$banco->consultar($sql);
+    if (!$consulta) {
+      return false;
+   }else{
+      return $consulta; 
+   }
+}
+
 function alteraProduto($id, $nome, $descricao, $valor){
     $banco=new banco();
     $sql="update produto set nome='$nome', descricao='$descricao', valor='$valor' where id=$id";
