@@ -44,7 +44,9 @@ $consulta=listaCliente();
 
     <div class="container mt-5">
         <table class="table table-striped">
-        <p>N&ordm; de Clientes Cadastrados: <?php  echo $res['COUNT(cpf)']; ?></p>
+          <div class="alert alert-secondary" role="alert">
+            <p>N&ordm; de Clientes Cadastrados: <?php  echo $res['COUNT(cpf)']; ?></p>
+          </div>
             <thead>
                 <tr>
                     <th scope="col">Nome</th>

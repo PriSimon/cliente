@@ -21,7 +21,7 @@ require_once 'menu.php';
         <p>Nome: <input type="text" name="nome" size="100" maxlegth="100" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}" title="Nome do produto" required></p>
         <p>Descrição:  <input type="text" name="descricao" size="150" maxlegth="150" pattern="[0-9]{1,8}\[0-9]{2}" title="Apenas números" required></p> 
         <p>Valor R$:   <input type="text" name="valor" size="10" maxlegth="10" pattern="[0-9]{1,8}\[0-9]{2}" title="99.99" required></p> 
-        <input type="submit" name="cadastrar" value="Cadastrar">
+        <input type="submit" class="btn btn-primary" name="cadastrar" value="Cadastrar">
 </form>
 </div>
 

@@ -8,6 +8,8 @@
         <meta name="author" content="Priscila Simon">
 	    <meta name="keywords" content="cadastro, cliente, produto, banco de dados">
 	    <meta name="description" content="Sistema para cadastro de clientes e produtos">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,200">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
        
     </head>
 <body>
@@ -33,22 +35,21 @@ if(!$consulta){
 
 <div class="container mt-5">
         <table class="table table-striped">
-            <p>Produtos Cadastrados</p>
+            <h1>Produtos Cadastrados</h1>
             <thead>
                 <tr>
-                    <th scope="col"> ID <form action="listarProduto.php" method="GET">
+                    <th scope="col"> ID  <form action="listarProduto.php" method="GET" style="display:inline">
 				        <input type="hidden" name="ordem" value="id">
-					    <input type="submit" value="&#8659;"></form></th>
-                    <th scope="col"> Nome <form action="listarProduto.php" method="GET">
+					    <button type="submit" class="btn btn-secondary btn-sm">
+                        <span class="material-symbols-outlined">south</span></button></form></th>
+                    <th scope="col"> Nome  <form action="listarProduto.php" method="GET" style="display:inline">
 				        <input type="hidden" name="ordem" value="nome">
-					    <input type="submit" value="&#8659;"></form></th>
-                    <th scope="col"> Descrição <form action="listarProduto.php" method="GET">
-				        <input type="hidden" name="ordem" value="descricao">
-					    <input type="submit" value="&#8659;"></form></th>
-                    <th scope="col"> Valor (R$) <form action="listarProduto.php" method="GET">
+					    <button type="button" class="btn btn-secondary btn-sm"><span class="material-symbols-outlined">south</span></form></th>
+                    <th scope="col"> Descrição  <form action="listarProduto.php" method="GET" style="display:inline"></form></th>
+                    <th scope="col"> Valor (R$)  <form action="listarProduto.php" method="GET" style="display:inline">
 				        <input type="hidden" name="ordem" value="valor">
-					    <input type="submit" value="&#8659;"></form></th>
-                    <th scop="col"> Ações </th>
+					    <button type="button" class="btn btn-secondary btn-sm"><span class="material-symbols-outlined">south</span></form></th>
+                    <th scop="col"> Ações  </th>
                 </tr>
          </thead>
         <tbody>
@@ -58,9 +59,13 @@ if(!$consulta){
                     <td><?php echo $linha['nome']; ?></td>
                     <td><?php echo $linha['descricao']; ?></td>
                     <td><?php echo $linha['valor']; ?></td>
-                    <td><form action="alterarProduto.php" method="POST">
+                    <td><form action="alterarProduto.php" method="POST" style="display:inline">
                         <input type="hidden" name="id" value="<?php echo $linha['id'];?>">
-                        <input type="submit" value="&#128221;"></form></td> 
+                        <input type="submit" value="&#128221;" class="btn btn-primary"></form>
+                        <form action="removerProduto.php" method="POST" style="display:inline">
+                        <input type="hidden" name="id" value="<?php echo $linha['id'];?>">
+                        <input type="submit" value="&#128465;" class="btn btn-danger"></form>
+                    </td> 
                 </tr>
     <?php } ?>
 
@@ -72,7 +77,8 @@ if(!$consulta){
 
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-        <button type="button" class="btn btn-dark" onclick="javascript:window.print();">Imprimir</button>
+    <button type="button" class="btn btn-info" onclick="javascript:window.print();">
+            <span class="material-symbols-outlined">print</span></button>
     </div>
 </div>
 

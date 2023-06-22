@@ -80,4 +80,17 @@ function alteraProduto($id, $nome, $descricao, $valor){
 }
 
 
- ?>
+
+
+function removerProduto($id){
+ 	$banco=new Banco();
+ 	$sql="delete from produto where id=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+    ?>
