@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <link rel="stylesheet" type="text/css" href="css/cadastro.css">
 	    <title>Novo Cliente</title>
         <meta name="author" content="Priscila Simon">
 	    <meta name="keywords" content="cadastro, cliente, produto, banco de dados">
 	    <meta name="description" content="Sistema para cadastro de clientes e produtos">
+        <link rel="stylesheet" type="text/css" href="css/principal.css">
     </head>
 <body>
 
@@ -34,10 +34,10 @@ $consulta=contarCliente();
 
 <div class="container pb-5">
     <div class="alert alert-secondary" role="alert">
-    <p>N&ordm; de Clientes Cadastrados: <?php  echo $res['COUNT(cpf)']; ?></p>
+    <p class="mt-5 mb-5 d-flex justify-content-center">N&ordm; de Clientes Cadastrados: <?php  echo $res['COUNT(cpf)']; ?></p>
     </div>
     <form id="cadastro" action="cadastroCliente.php" method="POST">
-        <h1 class="mt-5 mb-5"> Cadastro de Clientes </h1>
+        <h1 class="mt-5 mb-5 d-flex justify-content-center"> Cadastro de Clientes </h1>
             <p>Nome: <input class="form-control" type="text" name="nome" size="100" maxlegth="100" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}" title="Nome completo" required></p>
             <p>CPF:  <input class="form-control" type="text" name="cpf" size="11" maxlegth="11" pattern="[0-9]{1,8}\[0-9]{2}" title="Apenas números" required></p> 
             <p>RG:   <input  class="form-control"type="text" name="rg" size="10" maxlegth="10" pattern="[0-9]{1,8}\[0-9]{2}" title="Apenas números" required></p> 
@@ -69,9 +69,9 @@ require_once 'model/Cliente.php';
 
     $resposta=cadastroCliente($nome, $cpf, $rg, $nascimento, $cep, $endereco, $cidade, $email, $telefone);
     if(!$resposta){
-        echo "<h2> Erro na tentativa de cadastro.</h2>";
+        echo "<h2 class='mt-5 mb-5 d-flex justify-content-center'> Erro na tentativa de cadastro.</h2>";
     }else{
-        echo "<h2> Cadastro realizado com sucesso.</h2>";
+        echo "<h2 class='mt-5 mb-5 d-flex justify-content-center'> Cadastro realizado com sucesso.</h2>";
     }
 }
 

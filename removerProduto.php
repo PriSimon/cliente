@@ -23,7 +23,7 @@ if(isset($_POST['id'])){
  
   $consulta=selecionaProduto($id);
   if (!$consulta){
-        return "<p>Produto não encontrado.</p>";
+        return "<p class='mt-5 mb-5 d-flex justify-content-center'>Produto não encontrado.</p>";
    }else{
      while($linha=$consulta->fetch_assoc()){ 
       
@@ -34,7 +34,7 @@ if(isset($_POST['id'])){
 <form  method="POST">
 <div class="card">
   <div class="card-header">
-       <h1>Excluir Produto</h1>
+       <h1 class="mt-5 mb-5 d-flex justify-content-center">Excluir Produto</h1>
       </div>
       </div>
   <div class="card-body">
@@ -56,7 +56,7 @@ if(isset($_POST['id'])){
         </div>
      </div>
      </div>
-     </form>
+     
 
 <?php
 
@@ -68,9 +68,9 @@ require_once 'model/Produto.php';
 
     $resposta=removerProduto($id);
     if(!$resposta){
-        echo "<p> Erro na tentativa de excluir.</p>";
+        echo "<h2 class='mt-5 mb-5 d-flex justify-content-center'> Erro na tentativa de excluir.</h2>";
     }else{
-        echo "<p> Produto excluído com sucesso.</p>";
+        echo "<h2 class='mt-5 mb-5 d-flex justify-content-center'> Produto excluído com sucesso.</h2>";
     }
 }
                                     
@@ -80,7 +80,7 @@ require_once 'model/Produto.php';
 ?>
 
 
-   
+</form>
 
 </body>
 </html>   

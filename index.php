@@ -3,12 +3,12 @@
     <head>
         <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <link rel="stylesheet" type="text/css" href="css/principal.css">
 	    <title>Sistema C&P</title>
         <meta name="author" content="Priscila Simon">
 	    <meta name="keywords" content="cadastro, cliente, produto, banco de dados">
 	    <meta name="description" content="Sistema para cadastro de clientes e produtos">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/principal.css">
 		
     </head>
 <body>
@@ -27,14 +27,13 @@ require_once 'menu.php';
   <input type="password" class="form-control" name="senha">
   <label for="floatingPassword">Senha: </label>
   <div class="col-12 mt-5">
-    <button class="btn btn-primary" type="submit">Logar</button>
-  </div>
- 
+    <button class="btn btn-primary" type="submit" style="display:inline">Logar</button>
+
+
+	<label for="floatingInput" style="display:inline" class="float-right"> Ainda não tem cadastro? <a href="cadastroUsuario.php"><button class="btn btn-primary ml-2" type="submit">Cadastrar</button></a></label>
 </div>
 </form>
-<div class="col-12 mt-3">
-<label for="floatingInput"> Ainda não tem cadastro? <a href="cadastroUsuario.php"><button class="btn btn-primary" type="submit">Cadastrar</button></a>
-</div>
+
 
 
 <?php
@@ -45,11 +44,11 @@ require_once 'menu.php';
 
 		$resposta=login($login,$senha);
 		if ($resposta) {
-			echo "<p>Login realizado com sucesso!</p>";
+			echo "<p class='mt-5 mb-5 d-flex justify-content-center'>Login realizado com sucesso!</p>";
 			//$teste=criarLogin($teste,$usuario);
 			echo "<meta http-equiv='refresh'content='2; url=//localhost/cliente/home.php'>"; //direcionar apenas quando fizer o login
 		}else{
-			echo "<p>Erro na tentativa de Login.</p>";
+			echo "<p class='mt-5 mb-5 d-flex justify-content-center'>Erro na tentativa de Login.</p>";
 		}
 		}
 

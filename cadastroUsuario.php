@@ -3,19 +3,20 @@
     <head>
         <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <link rel="stylesheet" type="text/css" href="css/principal.css">
+	    
 	    <title>Novo Usuário</title>
         <meta name="author" content="Priscila Simon">
 	    <meta name="keywords" content="cadastro, cliente, produto, banco de dados">
 	    <meta name="description" content="Sistema para cadastro de clientes e produtos">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/principal.css">
     </head>
 <body>
 
 
 
 <div class="container mt-5">
-<h1> Cadastro de novo Usuário</h1>
+<h1 class="mt-5 mb-5 d-flex justify-content-center"> Cadastro de novo Usuário</h1>
 
 
 <form method="POST" class="row g-3 needs-validation" novalidate>
@@ -59,9 +60,9 @@ if (isset($_POST['nome'])) {
 			$id++;
 			$resposta=cadastroUsuario($id,$nome,$login,md5($senha),$email);
 				if (!$resposta) {
-					echo "<p>Erro na tentativa de cadastro!</p>";
+					echo "<p class='mt-5 mb-5 d-flex justify-content-center'>Erro na tentativa de cadastro!</p>";
 				}else{
-					echo "<p>Usuário cadastrado com sucesso!</p>";
+					echo "<p class='mt-5 mb-5 d-flex justify-content-center'>Usuário cadastrado com sucesso!</p>";
           echo "<meta http-equiv='refresh'content='2; url=//localhost/cliente/index.php'>";
 
 		}
