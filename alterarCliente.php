@@ -32,38 +32,38 @@ require_once 'model/Cliente.php';
 
 
 <div class="container">
-    <div class="container mt-5">
-    <form action="alterarCliente.php" method="POST">
+    <div id="cadas" class="container mt-5">
+    <form  class="formCad" action="alterarCliente.php" method="POST">
             <h1 class="mt-5 mb-5 d-flex justify-content-center">Alteração de dados dos Clientes</h1>
-    </div>
-            <p>Nome: <input class="form-control" type="text" name="nome" size="100" maxlegth="100"  value="<?php echo $linha['nome'] ?>"></p>
-            <p>CEP: <input  class="form-control" type="text" name="cep" size="8" maxlegth="8" pattern="[0-9]{1,8}\[0-9]{2}"  value="<?php echo $linha['cep']; ?>"></p> 
-            <p>Endereço: <input  class="form-control" type="text" name="endereco" size="100" maxlegth="100"  value="<?php echo $linha['endereco']; ?>"></p>
-            <p>Cidade: <input  class="form-control" type="text" name="cidade" size="30" maxlegth="30"  value="<?php echo $linha['cidade']; ?>"></p>
-            <p>Email: <input class="form-control" type="email" name="email" size="75" maxlegth="75" value="<?php echo $linha['email']; ?>"></p>
-            <p>Telefone: <input  class="form-control" type="text" name="telefone" size="20" maxlegth="20" pattern="[0-9]{1,8}\[0-9]{2}" value="<?php echo $linha['telefone']; ?>"></p>
+    
+             <label for="floatingInput">Nome: <input class="form-control" type="text" name="nome" size="100" maxlegth="100"  value="<?php echo $linha['nome'] ?>"></label>
+        <div class="form-floating">   
+             <label for="floatingInput">CEP: <input  class="form-control" type="text" name="cep" size="8" maxlegth="8" pattern="[0-9]{1,8}\[0-9]{2}"  value="<?php echo $linha['cep']; ?>"></label> 
+      </div>
+             <label for="floatingInput">Endereço: <input  class="form-control" type="text" name="endereco" size="100" maxlegth="100"  value="<?php echo $linha['endereco']; ?>"></label>
+        <div class="form-floating">   
+             <label for="floatingInput">Cidade: <input  class="form-control" type="text" name="cidade" size="30" maxlegth="30"  value="<?php echo $linha['cidade']; ?>"></label>
+      </div>
+             <label for="floatingInput">Email: <input class="form-control" type="email" name="email" size="75" maxlegth="75" value="<?php echo $linha['email']; ?>"></label>
+        <div class="form-floating">      
+             <label for="floatingInput">Telefone: <input  class="form-control" type="text" name="telefone" size="20" maxlegth="20" pattern="[0-9]{1,8}\[0-9]{2}" value="<?php echo $linha['telefone']; ?>"></label>
+        </div>
                 <input type="hidden" name="cpf" value="<?php echo $linha['cpf']; ?>">
                 <input type="hidden" name="rg" value="<?php echo $linha['rg']; ?>">
                 <input type="hidden" name="nascimento" value="<?php echo $linha['nascimento']; ?>">
     <div class="form-group" style="display:inline-flex">
         <div class="col-sm-offset-2 col-sm-3">
             <button type="submit" class="btn btn-primary">Salvar</button>
-         </div>
-    
-        <div class="col-sm-offset-2 col-sm-10">
             <button type="reset" class="btn btn-secondary">Cancelar</button>
         </div>
      
         <div class="col-sm-offset-2 col-sm-3">
             <button type="button" class="btn btn-info" onclick="javascript:window.print();">
             <span class="material-symbols-outlined">print</span></button>
-        </div>
-   
-        <div class="col-sm-offset-2 col-sm-3">
             <button type="button" class="btn btn-dark" onclick="javascript:history.back();">Voltar</button>
         </div>
     </div>
-   
+    
                            
   
 <?php
@@ -92,7 +92,7 @@ require_once 'model/Cliente.php';
     }
    }
 ?>
-
+</div>
 </form>
 
 </body>

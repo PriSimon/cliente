@@ -15,7 +15,8 @@
 
 
 
-<div class="container mt-5">
+<div  id="pag" class="container mt-5">
+<form class="formLogin">
 <h1 class="mt-5 mb-5 d-flex justify-content-center"> Cadastro de novo Usuário</h1>
 
 
@@ -41,6 +42,7 @@
   <div class="col-12">
     <button class="btn btn-primary" type="submit">Cadastrar</button>
   </div>
+</form>
 </form>
 
 

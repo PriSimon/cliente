@@ -46,7 +46,7 @@ $consulta=listaCliente();
     <div class="container mt-5">
         <table class="table table-striped">
           <div class="alert alert-secondary" role="alert">
-            <p class="mt-5 mb-5 d-flex justify-content-center">N&ordm; de Clientes Cadastrados: <?php  echo $res['COUNT(cpf)']; ?></p>
+            <p class="mt-1 mb-1 d-flex justify-content-center">N&ordm; de Clientes Cadastrados: <?php  echo $res['COUNT(cpf)']; ?></p>
           </div>
 
 
@@ -134,7 +134,7 @@ if(isset($_GET['busca'])){
                     <td><?php echo $linha['telefone']; ?></td>
                     <td><form action="alterarCliente.php" method="POST">
                         <input type="hidden" name="cpf" value="<?php echo $linha['cpf'];?>">
-                        <input type="submit" value="&#128221;"></form></td> 
+                        <input type="submit" value="&#128221;" class="btn btn-primary"></form></td> 
                 </tr>
                 <?php  } ?>
     

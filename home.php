@@ -21,13 +21,13 @@ require_once 'menu.php';
 
 <div class="container mt-5 mb-5">
 <h1 class="mt-5 mb-5 d-flex justify-content-center">Bem vindo ao sistema de cadastro de clientes e produtos.</h1>
-<h2>Use o menu acima para navegar.</h2>
+<h2 class="mt-2 mb-2 d-flex justify-content-center">Use o menu acima para navegar.</h2>
 
-<div class="alert alert-dark mt-5" role="alert">
+<div class="alert bg-dark text-white mt-5"  display= "flex" justify-content="center" role="alert">
 <?php 
 
 echo "<h2 class='mt-3 mb-3 d-flex justify-content-center'>Hoje é dia</h2>";
-echo "<p class='d-flex justify-content-center'>".date("d/m/Y")."</p>";
+echo "<h2 class='d-flex justify-content-center'>".date("d/m/Y")."</h2>";
 ?>
 
 </div>

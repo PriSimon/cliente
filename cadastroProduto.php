@@ -15,13 +15,15 @@
 require_once 'menu.php';
 ?>
 
-<div class="container mt-5">
-<form id="cadastro" action="cadastroProduto.php" method="POST">
+<div id="cadas" class="container mt-5">
+<form  class="formCad" id="cadastro" action="cadastroProduto.php" method="POST">
     <h1 class="mt-5 mb-5 d-flex justify-content-center"> Cadastro de Produtos </h1>
     <br>
-        <p>Nome:  <input class="form-control" type="text" name="nome" size="50" maxlegth="100" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}" title="Nome do produto" required></p>
-        <p>Descrição:  <input class="form-control" type="text" name="descricao" size="50" maxlegth="150" pattern="[0-9]{1,8}\[0-9]{2}" title="Apenas números" required></p> 
-        <p>Valor R$:   <input  class="form-control" type="text" name="valor" size="10" maxlegth="10" pattern="[0-9]{1,8}\[0-9]{2}" title="99.99" required></p> 
+        <label for="floatingInput">Nome:  <input class="form-control" type="text" name="nome" size="50" maxlegth="100" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}" title="Nome do produto" required></label>
+        <label for="floatingInput">Descrição:  <input class="form-control" type="text" name="descricao" size="50" maxlegth="150" pattern="[0-9]{1,8}\[0-9]{2}" title="Apenas números" required></label> 
+        <div class="form-floating" >
+            <label for="floatingInputGrid">Valor R$:   <input  class="form-control" type="text"  id="floatingInputGrid" name="valor" size="10" maxlegth="10" pattern="[0-9]{1,8}\[0-9]{2}" title="99.99" required></label> 
+        </div>
         <input type="submit" class="btn btn-primary d-flex justify-content-center" name="cadastrar" value="Cadastrar">
 
 

@@ -17,23 +17,26 @@
 require_once 'menu.php';
 ?>
 
-<div class="container mt-5">
-<form method="POST">
+<div id="pag" class="container mt-0">
+<form class="formLogin" method="POST">
+<h1 class="mt-0 d-flex justify-content-center">Bem vindo(a)</h1>
+            <p class="mt-1 mb-1 d-flex justify-content-center">Digite os seus dados de acesso:</p>
 <div class="form-floating mb-3">
+
   <input type="text" class="form-control" name="login">
   <label for="floatingInput">Usuário: </label>
 </div>
 <div class="form-floating">
   <input type="password" class="form-control" name="senha">
   <label for="floatingPassword">Senha: </label>
-  <div class="col-12 mt-5">
-    <button class="btn btn-primary" type="submit" style="display:inline">Logar</button>
-
-
-	<label for="floatingInput" style="display:inline" class="float-right"> Ainda não tem cadastro? <a href="cadastroUsuario.php"><button class="btn btn-primary ml-2" type="submit">Cadastrar</button></a></label>
+  <div class="col-12 mt-2 d-flex justify-content-center">
+    <button class="btn btn-primary w-100" type="submit">Logar</button>
+	</div>
+	<div class="col-12 mt-4 mb-3">
+	<label for="floatingInput"  class="float-right"> Ainda não tem cadastro? <a href="cadastroUsuario.php"><button class="btn btn-primary ml-2" type="submit">Cadastrar</button></a></label>
 </div>
 </form>
-
+<br>
 
 
 <?php
@@ -44,17 +47,18 @@ require_once 'menu.php';
 
 		$resposta=login($login,$senha);
 		if ($resposta) {
-			echo "<p class='mt-5 mb-5 d-flex justify-content-center'>Login realizado com sucesso!</p>";
+			echo "<h2 class='mt-4 mb-1'>Login realizado com sucesso!</h2>";
 			//$teste=criarLogin($teste,$usuario);
 			echo "<meta http-equiv='refresh'content='2; url=//localhost/cliente/home.php'>"; //direcionar apenas quando fizer o login
 		}else{
-			echo "<p class='mt-5 mb-5 d-flex justify-content-center'>Erro na tentativa de Login.</p>";
+			echo "<h2 class='mt-4 mb-1'>Erro na tentativa de Login.</h2>";
 		}
 		}
 
 
 
 ?>
+
 </div>
 
 

@@ -40,16 +40,16 @@ if(!$consulta){
             <br>
             <thead>
                 <tr>
-                    <th scope="col"> ID  <form action="listarProduto.php" method="GET" style="display:inline">
+                    <th scope="col" > ID  <form action="listarProduto.php" method="GET" style="display:inline">
 				        <input type="hidden" name="ordem" value="id">
-					    <input type="submit" value="&#129095;" class="btn btn-secondary btn-sm"></form></th>
+					     <input type="submit" value="&#129095;" class="btn btn-secondary btn-sm ml-1"></form></th>
                     <th scope="col"> Nome  <form action="listarProduto.php" method="GET" style="display:inline">
 				        <input type="hidden" name="ordem" value="nome">
-                        <input type="submit" value="&#129095;" class="btn btn-secondary btn-sm"></form></th>
+                        <input type="submit" value="&#129095;" class="btn btn-secondary btn-sm ml-1"></form></th>
                     <th scope="col"> Descrição  <form action="listarProduto.php" method="GET" style="display:inline"></form></th>
                     <th scope="col"> Valor (R$)  <form action="listarProduto.php" method="GET" style="display:inline">
 				        <input type="hidden" name="ordem" value="valor">
-                        <input type="submit" value="&#129095;" class="btn btn-secondary btn-sm"></form></th>
+                        <input type="submit" value="&#129095;" class="btn btn-secondary btn-sm ml-1"></form></th>
                     <th scop="col"> Ações  </th>
                 </tr>
          </thead>
@@ -80,8 +80,8 @@ if(!$consulta){
 ?>
 
 <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10 mt-5">
-    <button type="button" class="btn btn-info" onclick="javascript:window.print();">
+    <div class="col-sm-offset-2 col-sm-11.5 mt-5">
+    <button type="button" class="btn btn-info float-right" onclick="javascript:window.print();">
             <span class="material-symbols-outlined">print</span></button>
     </div>
 </div>

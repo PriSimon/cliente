@@ -32,37 +32,31 @@ require_once 'model/Produto.php';
 
 
 <div class="container">
-    <div class="container mt-5">
-    <form action="alterarProduto.php" method="POST">
+    <div id="cadas"  class="container mt-5">
+    <form class="formCad" action="alterarProduto.php" method="POST">
             <h1 class="mt-5 mb-5 d-flex justify-content-center">Alteração de Produto</h1>
     </div>
-        <p>Nome: <input type="text" name="nome" size="100" maxlegth="100" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}"  value="<?php echo $linha['nome'] ?>"></p>
-        <p>Descrição:  <input type="text" name="descricao" size="100" maxlegth="150" pattern="[0-9]{1,8}\[0-9]{2}"  value="<?php echo $linha['descricao'] ?>"></p> 
-        <p>Valor R$:   <input type="text" name="valor" size="10" maxlegth="10" pattern="[0-9]{1,8}\[0-9]{2}" value="<?php echo $linha['valor'] ?>"></p> 
+        <label for="floatingInput">Nome: <input type="text" name="nome" size="100" maxlegth="100" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}"  value="<?php echo $linha['nome'] ?>"></label>
+        <label for="floatingInput">Descrição:  <input type="text" name="descricao" size="100" maxlegth="150" pattern="[0-9]{1,8}\[0-9]{2}"  value="<?php echo $linha['descricao'] ?>"></label> 
+        <div class="form-floating" >
+            <label for="floatingInput">Valor R$:   <input type="text" id="floatingInputGrid"  name="valor" size="10" maxlegth="10" pattern="[0-9]{1,8}\[0-9]{2}" value="<?php echo $linha['valor'] ?>"></label> 
+        </div>
         <input type="hidden" name="id" value="<?php echo $linha['id']; ?>">
         
     
     <div class="form-group mt-5" style="display:inline-flex">
         <div class="col-sm-offset-2 col-sm-3" >
-        <button type="submit" class="btn btn-primary">Salvar</button>
-         </div>
-    
-    
-        <div class="col-sm-offset-2 col-sm-5">
-            <button type="reset" class="btn btn-secondary">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Salvar</a></button>
+        <button type="reset" class="btn btn-secondary">Cancelar</button>
         </div>
      
     
-        <div class="col-sm-offset-2 col-sm-2">
+        <div class="col-sm-offset-2 col-sm-3" >
             <button type="button" class="btn btn-info" onclick="javascript:window.print();">
             <span class="material-symbols-outlined">print</span></button>
+            <button type="button" class="btn btn-dark" onclick="javascript:history.back();"><a href="listarProduto.php">Voltar</a></button>
         </div>
-    
-        <div class="col-sm-offset-2 col-sm-3">
-            <button type="button" class="btn btn-dark" onclick="javascript:history.back();">Voltar</button>
-        </div>
-    </div>
-                           
+    </div>          
   
 <?php
 
