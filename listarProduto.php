@@ -65,9 +65,7 @@ if(!$consulta){
                     <td><form action="alterarProduto.php" method="POST" style="display:inline">
                         <input type="hidden" name="id" value="<?php echo $linha['id'];?>">
                         <input type="submit" value="&#128221;" class="btn btn-primary"></form>
-                        <form action="removerProduto.php" method="POST" style="display:inline">
-                        <input type="hidden" name="id" value="<?php echo $linha['id'];?>">
-                        <input type="submit" value="&#128465;" class="btn btn-danger"></form>
+                        <a href="<?php echo 'removerProduto.php?id=' . $linha['id'];?>"><button value="&#128465;" class="btn btn-danger">&#128465;</button></a>
                     </td> 
                 </tr>
     <?php } ?>

@@ -17,8 +17,8 @@ require_once 'menu.php';
 
 
 
-if(isset($_POST['id'])){
-  $id=$_POST['id'];
+if(isset($_GET['id'])){
+  $id=$_GET['id'];
  require_once 'model/Produto.php';
  
   $consulta=selecionaProduto($id);
@@ -48,7 +48,7 @@ if(isset($_POST['id'])){
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
         <button type="submit" class="btn btn-danger">Excluir</button>
       </div>
- 
+     
 
     <div class="form-group">
         <div class="col-sm-offset-0 col-sm-5">
@@ -56,10 +56,10 @@ if(isset($_POST['id'])){
         </div>
      </div>
      </div>
-     
+     </form>
 
 <?php
-
+echo var_dump($_POST);
 if(isset($_POST['id'])){
     $id=$_POST['id'];
     
@@ -80,7 +80,7 @@ require_once 'model/Produto.php';
 ?>
 
 
-</form>
+
 
 </body>
 </html>   

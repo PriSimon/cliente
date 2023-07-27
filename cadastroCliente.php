@@ -34,7 +34,7 @@ $consulta=contarCliente();
 
 <div id="cadas" class="container pb-5">
     <div class="alert alert-secondary" role="alert">
-    <h4 class="mt-1 mb-1 d-flex justify-content-center">N&ordm; de Clientes Cadastrados:  <strong><?php  echo $res['COUNT(cpf)']; ?></strong></h4>
+    <p class="mt-1 mb-1 d-flex justify-content-center">N&ordm; de Clientes Cadastrados:  <?php  echo  $res['COUNT(cpf)']; ?></p>
     </div>
     <div id="cadas">
     <form class="formCad" action="cadastroCliente.php" method="POST">
