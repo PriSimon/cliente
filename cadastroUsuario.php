@@ -13,10 +13,10 @@
     </head>
 <body>
 
+<?php require_once 'menu.php';?>
 
-
-<div  id="pag" class="container mt-5">
-<form class="formLogin">
+<div  id="cadas" class="container mt-5">
+<form  method="POST" class="formCad">
 <h1 class="mt-5 mb-5 d-flex justify-content-center"> Cadastro de novo Usuário</h1>
 
 
@@ -39,29 +39,28 @@
     <label for="validationCustom04" class="form-label">E-mail: </label>
     <input type="email" class="form-control" name="email" placeholder="teste@examplo.com" required>
   </div>
-  <div class="col-12">
-    <button class="btn btn-primary" type="submit">Cadastrar</button>
-  </div>
-</form>
-</form>
+
+  <input type="submit" class="btn btn-primary d-flex justify-content-center" value="Cadastrar">
+
 
 
 <?php
 
-if (isset($_POST['nome'])) {
+if (isset($_POST['nome'])){
 		$nome=$_POST['nome'];
 		$login=$_POST['login'];
 		$senha=$_POST['senha'];
 		$email=$_POST['email'];
 		
 		require_once 'model/Usuario.php';
-		$id= idUsuario();
+		$id=idUsuario();
 		if (!$id) {
 			echo "<p>Erro ao cadastrar.</p>";
 		}else{
 			$id++;
 			$resposta=cadastroUsuario($id,$nome,$login,md5($senha),$email);
-				if (!$resposta) {
+  
+      if (!$resposta) {
 					echo "<p class='mt-5 mb-5 d-flex justify-content-center'>Erro na tentativa de cadastro!</p>";
 				}else{
 					echo "<p class='mt-5 mb-5 d-flex justify-content-center'>Usuário cadastrado com sucesso!</p>";
@@ -71,11 +70,10 @@ if (isset($_POST['nome'])) {
 	}
 }
 
-
-
-
 ?>
 </div>
+</form>
+</form>
 
 </body>
 </html>

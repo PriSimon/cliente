@@ -33,10 +33,10 @@ require_once 'menu.php';
     <button class="btn btn-primary w-100" type="submit">Logar</button>
 	</div>
 	<div class="col-12 mt-4 mb-3">
-	<label for="floatingInput"  class="float-right"> Ainda não tem cadastro? <a href="cadastroUsuario.php"><button class="btn btn-primary ml-2" type="submit">Cadastrar</button></a></label>
+    <label for="floatingInput"  class="float-right"> Ainda não tem cadastro? <a href="cadastroUsuario.php" class="btn btn-primary ml-2">Cadastrar</a></label>
 </div>
 </form>
-<br>
+<br>	
 
 
 <?php
@@ -47,19 +47,19 @@ require_once 'menu.php';
 
 		$resposta=login($login,$senha);
 		if ($resposta) {
-			echo "<h2 class='mt-4 mb-1'>Login realizado com sucesso!</h2>";
+			echo "<p class='mt-4 mb-1'>Login realizado com sucesso!</p>";
 			//$teste=criarLogin($teste,$usuario);
 			echo "<meta http-equiv='refresh'content='2; url=//localhost/cliente/home.php'>"; //direcionar apenas quando fizer o login
 		}else{
-			echo "<h2 class='mt-4 mb-1'>Erro na tentativa de Login.</h2>";
+			echo "<p class='mt-4 mb-1'>Erro na tentativa de Login.</p>";
 		}
 		}
-
-
 
 ?>
 
-</div>
+
+
+
 
 
 
