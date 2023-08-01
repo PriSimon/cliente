@@ -39,7 +39,7 @@ function idUsuario(){ //função para gerar o ID automárico
 	}else{
 		while ($linha=$consulta->fetch_assoc()) {
 			if ($linha['login']==$login){
-				if ($linha['senha']==$senha){
+				if ($linha['senha']===$senha){
 					return true;
 				}else{
 					return false;
@@ -51,15 +51,16 @@ function idUsuario(){ //função para gerar o ID automárico
 	}
 }
 
- function criarLogin($teste,$usuario){ //função para salvar o login (cookie)
-	if ($teste) {
+
+ function criarLogin($usuario){ //função para salvar o login (cookie)
+	//vou criar uma validação futuramente...bem...bem...futuramente, caso ele não consida funfar o cookie retorna falso.
 		setcookie('usuario',$usuario); 
-    }else{
-		return false;
-	}
+		return true;
 }
 
-function estaLogado(){ 
+
+
+function estaLogado(){ //função para forçar log caso tente acessar o menu sem entrar como usuário. Colocar no MENU
 	if(isset($_COOKIE['usuario'])) {
 		return true;
 	}else{

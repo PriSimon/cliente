@@ -13,9 +13,6 @@
     </head>
 <body>
 
-<?php 
-require_once 'menu.php';
-?>
 
 <div id="pag" class="container mt-0">
 <form class="formLogin" method="POST">
@@ -38,30 +35,28 @@ require_once 'menu.php';
 </form>
 <br>	
 
-
 <?php
-	if(isset($_POST['login'])){
-		$login=$_POST['login'];
-		$senha=$_POST['senha'];
-		require_once 'model/Usuario.php';
+    if(isset($_POST['login'])){
+        $login=$_POST['login'];
+        $senha=$_POST['senha'];
+       
 
-		$resposta=login($login,$senha);
-		if ($resposta) {
-			echo "<p class='mt-4 mb-1'>Login realizado com sucesso!</p>";
-			//$teste=criarLogin($teste,$usuario);
-			echo "<meta http-equiv='refresh'content='2; url=//localhost/cliente/home.php'>"; //direcionar apenas quando fizer o login
-		}else{
-			echo "<p class='mt-4 mb-1'>Erro na tentativa de Login.</p>";
-		}
-		}
+        // Convertendo a senha para MD5
+        $senha_md5=md5($senha);
 
+        require_once 'model/Usuario.php';
+        
+        $resposta=login($login, $senha_md5); // Verifica a senha convertida em MD5
+
+        if ($resposta){
+            echo "<p class='mt-4 mb-1 d-flex justify-content-center'>Login realizado com sucesso!</p>";
+        $iniciaSessao=criarLogin($login);
+            echo "<meta http-equiv='refresh' content='2; url=//localhost/cliente/home.php'>"; // Redirecionar apenas quando fizer o login
+        }else{
+            echo "<p class='mt-4 mb-1 d-flex justify-content-center'>Erro na tentativa de Login.</p>";
+        }
+    }
 ?>
-
-
-
-
-
-
 
 </body>
 </html>

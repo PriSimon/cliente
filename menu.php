@@ -12,6 +12,16 @@
 </style>
 </head>
 
+<?php
+require_once 'model/Usuario.php';
+
+$estalog=estaLogado();
+	//if($estalog){
+//	echo "<p class='mt-4 mb-1 d-flex justify-content-center>Você não está logado, favor logar!</p>";
+//else{ //está logado: return true
+
+?>
+
 <ul class="nav justify-content-center bg-dark p-2" >
   <li class="nav-item">
     <a class="nav-link" href="home.php">Página Inicial</a>
@@ -32,3 +42,5 @@
     <a class="nav-link" href="logoff.php">Sair</a>
   </li>
 </ul>
+
+<?php //} ?>

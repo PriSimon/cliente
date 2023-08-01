@@ -13,6 +13,15 @@
     </head>
 <body>
 
+<?php 
+require_once 'model/Usuario.php';
+$estalog=estaLogado();
+	if(!$estalog){ //se falso
+        echo "<meta http-equiv='refresh' content='2; url=//localhost/cliente/index.php'>"; 
+}else{ //está logado: return true
+
+?>
+
 <?php require_once 'menu.php'; ?>
 
 <div>
@@ -143,6 +152,7 @@ if(isset($_GET['busca'])){
     </div>
     
     <?php  }
+}
     ?>
 
 
